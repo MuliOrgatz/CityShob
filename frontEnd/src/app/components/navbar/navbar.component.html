@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="navbar">
+  <img src="favicon.ico" class="icon" />
+  <span class="title">CityShob</span>
+  <span class="example-spacer"></span>
+  <div class="user-info">
+    <img
+      src="https://ui-avatars.com/api/?name={{
+        currentUser()?.username || 'User'
+      }}"
+      alt="User Avatar"
+      class="avatar"
+    />
+  </div>
+</mat-toolbar>

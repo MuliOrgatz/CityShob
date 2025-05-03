@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.title {
+  font-weight: 500;
+  color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon {
+  width: 40px;
+  margin-right: 1rem;
+}
