@@ -113,7 +113,7 @@ CityShob is a real-time task management application with a frontend built using 
 7. **Lazy Loading:** Routes are configured to load modules lazily, improving initial load time.
 8. **SCSS for Styling:** SCSS is used for modular and reusable styles, ensuring a clean and maintainable design.
 
----
+--
 
 ## Bonus Features Implemented
 
@@ -140,6 +140,8 @@ This project includes several enhancements that go above and beyond the original
 - **NgRx Integration:** Full NgRx setup for tasks and user state, including:
 - **Actions, Reducers, Effects, Selectors**
 - **Store-driven task dialog logic and unlock behavior**
+
+---
 
 ## Additional Notes
 
