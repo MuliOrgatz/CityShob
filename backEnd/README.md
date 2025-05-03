@@ -62,10 +62,19 @@ This is the backend service for the CityShob application. It provides APIs for u
    ```
 
 3. Start MongoDB locally (if not already running):
-   macOS (Homebrew):
+   **macOS (Homebrew):**
+
+   ```bash
    brew services start mongodb-community
-   Windows:
-   Run 'mongod' in CMD, or open MongoDB Compass and ensure it's running.
+   ```
+
+   **Windows:**
+
+   ```bash
+   Run 'mongod' in CMD
+   ```
+
+   or open MongoDB Compass and ensure it's running.
 
 4. Set up environment variables (see [Environment Variables](#environment-variables)).
 
