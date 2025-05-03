@@ -29,16 +29,28 @@ CityShob is a real-time task management application with a frontend built using 
    ```
 
 3. Start MongoDB locally (if not already running):
-   macOS (Homebrew):
+   **macOS (Homebrew):**
+
+   ```bash
    brew services start mongodb-community
-   Windows:
-   Run 'mongod' in CMD, or open MongoDB Compass and ensure it's running.
+   ```
+
+   **Windows:**
+
+   ```bash
+   Run 'mongod' in CMD
+   ```
+
+   or open MongoDB Compass and ensure it's running.
 
 4. Create a .env file in the backEnd directory with the following content:
-   MONGO_URI=mongodb://127.0.0.1:27017/realtime-todo
-   PORT=3000
-   secretJWT_SECRET=mysuperkey123!
-   JWT_REFRESH_SECRET=mysuperdupersecretkey123!
+
+   ```bash
+    MONGO_URI=mongodb://127.0.0.1:27017/realtime-todo
+    PORT=3000
+    secretJWT_SECRET=mysuperkey123!
+    JWT_REFRESH_SECRET=mysuperdupersecretkey123!
+   ```
 
 5. Start the development server:
 
