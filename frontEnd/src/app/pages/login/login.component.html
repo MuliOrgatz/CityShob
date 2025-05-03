@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="login-container">
+    <h2 class="title">
+      {{ isRegisterMode ? "Create an Account" : "Welcome Back" }}
+    </h2>
+    <form [formGroup]="form" (ngSubmit)="loginOrRegister()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+        class="login"
+      >
+        {{ isRegisterMode ? "Sign Up" : "Log In" }}
+      </button>
+    </form>
+    <p class="toggle">
+      {{
+        isRegisterMode
+          ? "Already have an account?"
+          : "Don't have an account yet?"
+      }}
+      <a href="#" (click)="toggleMode(); $event.preventDefault()">
+        {{ isRegisterMode ? "Log In" : "Sign Up" }}
+      </a>
+    </p>
+  </div>
+</div>

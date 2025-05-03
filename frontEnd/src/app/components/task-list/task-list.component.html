@@ -1,0 +1,95 @@
+<div
+  class="task-table-container mat-elevation-z2"
+  *ngIf="tasks().length > 0; else noData"
+>
+  <table mat-table [dataSource]="tasks()" class="mat-table full-width">
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let task">
+        <span [class.completed]="task.completed">{{ task.title }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let task">
+        <span [class.completed]="task.completed">{{ task.description }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="completed">
+      <th mat-header-cell *matHeaderCellDef>Completed</th>
+      <td mat-cell *matCellDef="let task" class="checkboxtd">
+        <mat-checkbox
+          [checked]="task.completed"
+          (change)="markComplete(task)"
+          [disabled]="task.lockedBy"
+        ></mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Due dates Column -->
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef>Due Date</th>
+      <td mat-cell *matCellDef="let task">
+        <span [class.completed]="task.completed"
+          >{{ task.dueDate | formatDate }}
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Priority Column -->
+    <ng-container matColumnDef="priority">
+      <th mat-header-cell *matHeaderCellDef>Priority</th>
+      <td mat-cell *matCellDef="let task">
+        <span [class.completed]="task.completed">{{ task.priority }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let task" class="icon">
+        <ng-container *ngIf="!task.isEditing; else locked">
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="editTask(task)"
+            aria-label="Edit"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            (click)="deleteTask(task._id!)"
+            aria-label="Delete"
+          >
+            <mat-icon class="delete-icon">delete</mat-icon>
+          </button>
+        </ng-container>
+        <ng-template #locked>
+          <div class="locked-info">
+            <mat-icon color="disabled">lock</mat-icon>
+            <span class="locked-by">{{ task.lockedBy || "Unknown user" }}</span>
+          </div>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns"
+      class="header-row"
+    ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+<ng-template #noData>
+  <div class="no-data-message">
+    No tasks available.<br />
+    Click the "+" button in the bottom-left corner to create your first task.
+  </div>
+</ng-template>

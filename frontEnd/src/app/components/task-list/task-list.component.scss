@@ -1,0 +1,76 @@
+.task-table-container {
+  margin-top: 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fefefe;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  width: 70%;
+}
+
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.header-row {
+  background-color: #888d93;
+  color: white;
+  font-weight: bold;
+}
+
+.mat-header-cell {
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+.mat-cell {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+mat-icon {
+  font-size: 20px;
+}
+
+.icon {
+  padding-left: 0;
+}
+
+.checkboxtd {
+  padding-left: 2rem;
+}
+
+.no-data-message {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #757575;
+  padding: 20px;
+  border: 2px dashed #bdbdbd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.locked-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.locked-by {
+  font-style: italic;
+}
+
+.delete-icon {
+  color: #b4362d;
+}
